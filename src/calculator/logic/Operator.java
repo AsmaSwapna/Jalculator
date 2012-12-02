@@ -1,5 +1,5 @@
 package calculator.logic;
 
 abstract class Operator {
-	abstract Integer operate(Integer x, Integer y);
+	abstract Double operate(Double x, Double y);
 }

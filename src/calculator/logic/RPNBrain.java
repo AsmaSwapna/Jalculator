@@ -3,12 +3,12 @@ package calculator.logic;
 import java.util.Stack;
 
 public class RPNBrain extends Brain {
-	Stack<Integer> st = new Stack<Integer>();
+	Stack<Double> st = new Stack<Double>();
 
 	void operate(Operator o) {
-		Integer x1 = st.pop();
-		Integer x2 = st.pop();
-		Integer res = o.operate(x2,x1);
+		Double x1 = st.pop();
+		Double x2 = st.pop();
+		Double res = o.operate(x2,x1);
 		st.push(res);
 		op.set(res);
 	}

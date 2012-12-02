@@ -43,6 +43,12 @@ public abstract class Brain {
 	void digit(int num) {
 		op.addDigit(num);
 	}
+        
+        void digit(String num) {
+            for (int i = 0; i<num.length() ; i++) {
+                op.addDigit(num.charAt(i));
+            }
+        }
 
 	void backspace() {
 		op.deleteLastDigit();
@@ -53,7 +59,7 @@ public abstract class Brain {
 		String tmperr = error;
 		
 		if (error.length() == 0) {
-			return op.value().toString();
+			return op.strValue();
 		} else {
 			error = new String();
 			return tmperr;

@@ -8,10 +8,10 @@ public class Divisor extends Operator {
 	}
 
 	@Override
-	Integer operate(Integer x, Integer y) {
+	Double operate(Double x, Double y) {
 		if (y == 0) {
 			brain.setError("Zero division");
-			return 0;
+			return .0;
 		} else {
 			return x / y;
 		}

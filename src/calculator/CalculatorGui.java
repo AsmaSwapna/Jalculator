@@ -58,6 +58,8 @@ class CalculatorGui {
 		for (int i=0; i < 10; i++) {
 			buttons.add(new NumberButton(this, i));
 		}
+                buttons.add(new PointButton(this));
+                
 		buttons.add(new EnterButton(this));
 		buttons.add(new BackspaceButton(this));
 		buttons.add(new ClearButton(this));
@@ -89,18 +91,6 @@ class CalculatorGui {
 		display.setText(brain.currentValue());
 	}
 
-	// This one knows where and how to add a button to the correct
-	// column and row. All buttons have the same size.
-	void addButton(String name, Message msg, int row, int col) {
-		Button button = new Button(name);
-		MessageHandler behaviour = new MessageHandler(this, msg);
-		button.addActionListener(behaviour);
-		frame.add(button);
-		// button.setBounds(button_x(col), button_y(row), BWIDTH, BHEIGHT);
-
-		buttons.add(button);
-	}
-	
 	void setupDisplay() {
 		// Display Settings
 		display = new TextField("0", 14);
@@ -177,6 +167,12 @@ class NumberButton extends CalcButton {
 	NumberButton(CalculatorGui gui, int num) {
 		// Java sucks:
 		super(gui, Integer.toString(num), new NumberMessage(num), new NumberButtonPos(num));
+	}
+}
+class PointButton extends CalcButton {
+	PointButton(CalculatorGui gui) {
+		// Java sucks:
+		super(gui, ".", new NumberMessage("."), 1, 4);
 	}
 }
 

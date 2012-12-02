@@ -3,7 +3,7 @@ package calculator.logic;
 public class Adder extends Operator {
 
 	@Override
-	Integer operate(Integer x, Integer y) {
+	Double operate(Double x, Double y) {
 		return x+y;
 	}
 
